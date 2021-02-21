@@ -27,9 +27,9 @@ class DoubleMetaphoneSwiftTests: XCTestCase {
             XCTFail()
             return
         }
-        
-        XCTAssertTrue(primary == "SRN")
-        XCTAssertTrue(secondary == "SRN")
+
+        XCTAssertEqual(primary, "SRN")
+        XCTAssertEqual(secondary, "SRN")
     }
     
     func testTwoWordCalculation() {
@@ -39,8 +39,8 @@ class DoubleMetaphoneSwiftTests: XCTestCase {
             return
         }
         
-        XCTAssertTrue(primary == "ANRN")
-        XCTAssertTrue(secondary == "ANRN")
+        XCTAssertEqual(primary, "ANRN")
+        XCTAssertEqual(secondary, "ANRN")
     }
     
     func testSentenceCalculation() {
@@ -49,9 +49,9 @@ class DoubleMetaphoneSwiftTests: XCTestCase {
             XCTFail()
             return
         }
-        
-        XCTAssertTrue(primary == "ANRN")
-        XCTAssertTrue(secondary == "ANRN")
+
+        XCTAssertEqual(primary, "ANRN")
+        XCTAssertEqual(secondary, "ANRN")
     }
     
     func testPhraseCalculation() {
@@ -60,8 +60,8 @@ class DoubleMetaphoneSwiftTests: XCTestCase {
             XCTFail()
             return
         }
-        
-        XCTAssertTrue(primary == "0RRN")
-        XCTAssertTrue(secondary == "TRRN")
+
+        XCTAssertEqual(primary, "0RRN")
+        XCTAssertEqual(secondary, "TRRN")
     }
 }
