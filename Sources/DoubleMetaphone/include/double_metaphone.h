@@ -3,7 +3,7 @@
 
 
 void
-DoubleMetaphone(char *str, char **codes);
+DoubleMetaphone(char *str, char **codes, int max_len);
 
 
 #endif /* DOUBLE_METAPHONE__H */
