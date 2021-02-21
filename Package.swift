@@ -40,6 +40,13 @@ let package = Package(
         .target(
             name: "DoubleMetaphoneSwift",
             dependencies: ["DoubleMetaphone"]
+        ),
+        .testTarget(
+            name: "DoubleMetaphoneSwiftTests",
+            dependencies: [
+                "DoubleMetaphoneSwift"
+            ],
+            path: "DoubleMetaphoneSwiftTests"
         )
     ]
 )
