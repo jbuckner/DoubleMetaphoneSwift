@@ -27,7 +27,7 @@ print("Primary: \(primary)")      // Primary: HLRL
 print("Secondary: \(secondary)")  // Secondary: HLRL
 ```
 
-The default length of the returned calculations is 4 characters long, but can be customized:
+The default maximum length of the returned calculations is 4 characters long, but can be customized:
 ```swift
 let doubleMeta = DoubleMetaphoneSwift(maxLength: 8)
 
