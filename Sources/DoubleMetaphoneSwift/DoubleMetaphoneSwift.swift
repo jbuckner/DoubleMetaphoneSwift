@@ -21,7 +21,10 @@ public class DoubleMetaphoneSwift: NSObject {
     }
     
     func calculate(input: String) -> (String, String)? {
-        guard let response = impl.calculate(input as String?, maxLength: maxLength as NSNumber?), let primary = response[0] as? String, let secondary = response[1] as? String else {
+        guard
+            let response = impl.calculate(input as String?, maxLength: maxLength as NSNumber),
+            let primary = response[0] as? String, let secondary = response[1] as? String
+        else {
             return nil
         }
         
@@ -30,6 +33,7 @@ public class DoubleMetaphoneSwift: NSObject {
 
     public init(maxLength: Int) {
       self.maxLength = maxLength
+      super.init()
     }
 }
  
