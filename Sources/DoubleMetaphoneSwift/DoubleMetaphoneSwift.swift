@@ -20,7 +20,7 @@ public class DoubleMetaphoneSwift: NSObject {
       return instance.calculate(input:input)
     }
     
-    func calculate(input: String) -> (String, String)? {
+    public func calculate(input: String) -> (String, String)? {
         guard
             let response = impl.calculate(input as String?, maxLength: maxLength as NSNumber),
             let primary = response[0] as? String,
