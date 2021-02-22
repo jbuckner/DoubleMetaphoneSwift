@@ -11,19 +11,30 @@ import double_metaphone_swift
 
 public class DoubleMetaphoneSwift: NSObject {
     let impl = DoubleMetaphoneImpl()
+
+    private let maxLength: Int
     
-    static let instance = DoubleMetaphoneSwift()
+    static let instance = DoubleMetaphoneSwift(maxLength: 4)
     
     public static func calculate(input: String) -> (String, String)? {
-        return instance.calculate(input:input)
+      return instance.calculate(input:input)
     }
     
-    private func calculate(input: String) -> (String, String)? {
-        guard let response = impl.calculate(input as String?), let primary = response[0] as? String, let secondary = response[1] as? String else {
+    public func calculate(input: String) -> (String, String)? {
+        guard
+            let response = impl.calculate(input as String?, maxLength: maxLength as NSNumber),
+            let primary = response[0] as? String,
+            let secondary = response[1] as? String
+        else {
             return nil
         }
         
         return (primary, secondary)
+    }
+
+    public init(maxLength: Int) {
+      self.maxLength = maxLength
+      super.init()
     }
 }
  

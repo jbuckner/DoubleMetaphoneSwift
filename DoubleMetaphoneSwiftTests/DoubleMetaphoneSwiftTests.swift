@@ -64,4 +64,16 @@ class DoubleMetaphoneSwiftTests: XCTestCase {
         XCTAssertEqual(primary, "0RRN")
         XCTAssertEqual(secondary, "TRRN")
     }
+
+    func testAdjustableLength() {
+        let testPhrase = "A wizard is never late, nor is he early."
+        let doubleMeta = DoubleMetaphoneSwift(maxLength: 8)
+        guard let (primary, secondary) = doubleMeta.calculate(input: testPhrase) else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertEqual(primary, "ASRTSNFR")
+        XCTAssertEqual(secondary, "ATSRTSNF")
+    }
 }

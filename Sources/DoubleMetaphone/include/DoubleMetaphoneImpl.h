@@ -10,5 +10,5 @@
 #import "double_metaphone.h"
 
 @interface DoubleMetaphoneImpl : NSObject
-- (NSArray *)calculate: (NSString *)str;
+- (NSArray *)calculate: (NSString *)str maxLength: (NSNumber *)max_len;
 @end

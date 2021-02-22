@@ -201,7 +201,7 @@ MetaphAdd(metastring *s, char *new_str)
 
 
 void
-DoubleMetaphone(char *str, char **codes)
+DoubleMetaphone(char *str, char **codes, int max_len)
 {
     int			length;
     metastring *original;
@@ -238,7 +238,7 @@ DoubleMetaphone(char *str, char **codes)
     }
 
     /* main loop */
-    while ((primary->length < 4) || (secondary->length < 4))
+    while ((primary->length < max_len) || (secondary->length < max_len))
     {
         if (current >= length)
             break;
@@ -1221,11 +1221,11 @@ DoubleMetaphone(char *str, char **codes)
     }
 
 
-    if (primary->length > 4)
-        SetAt(primary, 4, '\0');
+    if (primary->length > max_len)
+        SetAt(primary, max_len, '\0');
     
-    if (secondary->length > 4)
-        SetAt(secondary, 4, '\0');
+    if (secondary->length > max_len)
+        SetAt(secondary, max_len, '\0');
     
     *codes = primary->str;
     *++codes = secondary->str;

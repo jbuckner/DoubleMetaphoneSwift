@@ -9,7 +9,7 @@
 #import "DoubleMetaphoneImpl.h"
 
 @implementation DoubleMetaphoneImpl
-- (NSArray *)calculate: (NSString *)str {
+- (NSArray *)calculate: (NSString *)str maxLength: (NSNumber *)max_len {
     const char * their_input = [str UTF8String];
     
     size_t buffer_size =  strlen(their_input) + 1 ;
@@ -18,7 +18,7 @@
     
     char * results[2];
     
-    DoubleMetaphone(input, results);
+    DoubleMetaphone(input, results, [max_len intValue]);
     char * primary = results[0];
     char * seconday = results[1];
     

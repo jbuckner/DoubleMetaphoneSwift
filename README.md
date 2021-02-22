@@ -27,3 +27,15 @@ print("Primary: \(primary)")      // Primary: HLRL
 print("Secondary: \(secondary)")  // Secondary: HLRL
 ```
 
+The default maximum length of the returned calculations is 4 characters long, but can be customized:
+```swift
+let doubleMeta = DoubleMetaphoneSwift(maxLength: 8)
+
+guard let (primary, secondary) = doubleMeta.calculate(input: "Hello world, good to see you") else {
+    print("Failed to calculate...")
+    return
+}
+
+print("Primary: \(primary)")      // Primary: ASRTSNFR
+print("Secondary: \(secondary)")  // Secondary: ASRTSNFR
+```
